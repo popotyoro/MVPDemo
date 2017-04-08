@@ -34,7 +34,6 @@ class ToursTableViewCell: UITableViewCell {
             return
         }
         _imageView.image = image
-//        _imageView.contentMode = .scaleAspectFit
         _depLabel.text = tourData.deptCountry
         _desLabel.text = tourData.destCountry
         _tourTitle.text = tourData.title

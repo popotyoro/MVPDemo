@@ -14,7 +14,7 @@ protocol TourPresenter: class {
     init(view: ToursView)
     var numberOfTours: Int {get}
     func tourData(index: Int) -> Tours
-    func showTours()
+    func requestTours(completionHandler: (() -> ())?)
 }
 
 struct URLParam {
@@ -23,7 +23,16 @@ struct URLParam {
     static let area = "EUR"
     static let dep = "TYO"
     static let count = 10
-        
+    
+    static var parameters: Parameters {
+        get {
+            return ["key" : URLParam.apiKey,
+                "format" : URLParam.format,
+                "area" : URLParam.area,
+                "dept" : URLParam.dep,
+                "count" : URLParam.count]
+        }
+    }
 }
 
 final class TourPresenterImpl: TourPresenter {
@@ -43,14 +52,9 @@ final class TourPresenterImpl: TourPresenter {
         return tours[index]
     }
     
-    func showTours() {
-        let parameters: Parameters = ["key" : URLParam.apiKey,
-                          "format" : URLParam.format,
-                          "area" : URLParam.area,
-                          "dept" : URLParam.dep,
-                          "count" : URLParam.count]
-        
-        Alamofire.request("http://webservice.recruit.co.jp/ab-road/tour/v1/?", parameters: parameters).responseJSON { (response) in
+    func requestTours(completionHandler: (() -> ())?) {
+    
+        Alamofire.request("http://webservice.recruit.co.jp/ab-road/tour/v1/?", parameters: URLParam.parameters).responseJSON { (response) in
             guard let jsonData = response.result.value else {
                 return
             }
@@ -66,7 +70,7 @@ final class TourPresenterImpl: TourPresenter {
                 self.tours.append(tour)
             })
             
-            self.view.reloadData()
+            completionHandler?()
         }
     }
 }

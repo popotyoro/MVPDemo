@@ -1,14 +1,15 @@
 //
-//  MVPDemoTests.swift
-//  MVPDemoTests
+//  PresenterOldTests.swift
+//  MVPDemo
 //
 //  Created by popota on 2017/04/08.
 //  Copyright © 2017年 popota. All rights reserved.
 //
 
 import XCTest
+@testable import MVPDemo
 
-class MVPDemoTests: XCTestCase {
+class PresenterOldTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -20,9 +21,18 @@ class MVPDemoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPresenter_requestTours実行前はToursのcountが0() {
+        let vc = ViewController()
+        vc.presenter = TourPresenterImpl(view: vc)
+        let actual = vc.presenter.numberOfTours
+        
+        XCTAssertEqual(0, actual)
     }
+    
+    
+    func testPresenter_registHogehogehoge () {
+        
+    }
+    
     
 }

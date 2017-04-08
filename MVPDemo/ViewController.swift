@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, ToursView {
         
         let toursView = self
         presenter = TourPresenterImpl(view: toursView)
-        presenter.showTours()
+        presenter.requestTours(completionHandler: self.reloadData)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -125,3 +125,4 @@ fastlane/test_output
 
 # Other
 bundle/*
+Pods

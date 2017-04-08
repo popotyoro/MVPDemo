@@ -21,6 +21,7 @@
 		C4F133421E98965000F98E95 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F133411E98965000F98E95 /* PresenterTests.swift */; };
 		C4F133471E98A4ED00F98E95 /* ToursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F133451E98A4ED00F98E95 /* ToursTableViewCell.swift */; };
 		C4F133481E98A4ED00F98E95 /* ToursTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F133461E98A4ED00F98E95 /* ToursTableViewCell.xib */; };
+		C4F1334C1E9900CA00F98E95 /* PresenterOldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F1334B1E9900CA00F98E95 /* PresenterOldTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C4F133411E98965000F98E95 /* PresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 		C4F133451E98A4ED00F98E95 /* ToursTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToursTableViewCell.swift; sourceTree = "<group>"; };
 		C4F133461E98A4ED00F98E95 /* ToursTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToursTableViewCell.xib; sourceTree = "<group>"; };
+		C4F1334B1E9900CA00F98E95 /* PresenterOldTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterOldTests.swift; sourceTree = "<group>"; };
 		C991A926E11DD0211FC34FD4 /* Pods-MVPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPDemo/Pods-MVPDemo.release.xcconfig"; sourceTree = "<group>"; };
 		FAF0FD016E83B1642C3B8749 /* Pods_MVPDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,6 +159,7 @@
 				C4F133331E9888C300F98E95 /* Info.plist */,
 				C4F133311E9888C300F98E95 /* MVPDemoTests.swift */,
 				C4F133411E98965000F98E95 /* PresenterTests.swift */,
+				C4F1334B1E9900CA00F98E95 /* PresenterOldTests.swift */,
 			);
 			path = MVPDemoTests;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F133421E98965000F98E95 /* PresenterTests.swift in Sources */,
+				C4F1334C1E9900CA00F98E95 /* PresenterOldTests.swift in Sources */,
 				C4F133321E9888C300F98E95 /* MVPDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

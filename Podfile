@@ -20,4 +20,5 @@ target 'MVPDemoTests' do
   pod 'SwiftyJSON'
   pod 'Nimble'
   pod 'Quick'
+  pod 'PromiseKit', '~> 4.0'
 end
