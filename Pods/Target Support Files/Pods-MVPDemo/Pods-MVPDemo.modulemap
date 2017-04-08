@@ -1,0 +1,6 @@
+framework module Pods_MVPDemo {
+  umbrella header "Pods-MVPDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

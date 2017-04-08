@@ -1,19 +1,88 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ToursTableViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="tourTableViewCellIdentity" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="ToursTableViewCell" customModule="MVPDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mjk-0M-mTe">
+                        <rect key="frame" x="0.0" y="17.5" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="gJK-4d-qgG"/>
+                            <constraint firstAttribute="width" constant="45" id="vqF-YW-NGh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出発地" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLm-DB-E5d">
+                        <rect key="frame" x="53" y="0.0" width="40" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目的地" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf6-jO-OMi">
+                        <rect key="frame" x="53" y="63.5" width="40" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="TourTItle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-af-7RU">
+                        <rect key="frame" x="101" y="10" width="262" height="51.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G54-ev-9jr">
+                        <rect key="frame" x="53" y="32" width="40" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-k0-4PC">
+                        <rect key="frame" x="340" y="63" width="31" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="G54-ev-9jr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0Ng-f9-AIM"/>
+                    <constraint firstItem="gGI-af-7RU" firstAttribute="leading" secondItem="lf6-jO-OMi" secondAttribute="trailing" constant="8" id="1Sc-me-h8y"/>
+                    <constraint firstAttribute="trailing" secondItem="ZBa-k0-4PC" secondAttribute="trailing" constant="4" id="Crx-Uh-ntX"/>
+                    <constraint firstItem="G54-ev-9jr" firstAttribute="trailing" secondItem="KLm-DB-E5d" secondAttribute="trailing" id="RHR-Gx-8T9"/>
+                    <constraint firstItem="KLm-DB-E5d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WgU-Ut-meo"/>
+                    <constraint firstAttribute="bottom" secondItem="lf6-jO-OMi" secondAttribute="bottom" id="egD-QC-EYO"/>
+                    <constraint firstItem="Mjk-0M-mTe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fGW-xJ-Qad"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gGI-af-7RU" secondAttribute="trailing" constant="4" id="gwy-sS-UwB"/>
+                    <constraint firstItem="lf6-jO-OMi" firstAttribute="top" secondItem="gGI-af-7RU" secondAttribute="bottom" constant="2" id="mYR-8B-Tth"/>
+                    <constraint firstItem="lf6-jO-OMi" firstAttribute="leading" secondItem="Mjk-0M-mTe" secondAttribute="trailing" constant="8" id="nFs-Nf-ZM1"/>
+                    <constraint firstItem="ZBa-k0-4PC" firstAttribute="top" secondItem="lf6-jO-OMi" secondAttribute="top" id="nSR-bA-oGr"/>
+                    <constraint firstItem="KLm-DB-E5d" firstAttribute="leading" secondItem="Mjk-0M-mTe" secondAttribute="trailing" constant="8" id="t1d-0U-7sd"/>
+                    <constraint firstItem="gGI-af-7RU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="t1n-ak-km8"/>
+                    <constraint firstItem="G54-ev-9jr" firstAttribute="leading" secondItem="KLm-DB-E5d" secondAttribute="leading" id="ukx-UH-2BW"/>
+                    <constraint firstItem="Mjk-0M-mTe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yeE-na-MsY"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="_depLabel" destination="KLm-DB-E5d" id="lLd-Ax-SLS"/>
+                <outlet property="_desLabel" destination="lf6-jO-OMi" id="wXe-uy-aX4"/>
+                <outlet property="_imageView" destination="Mjk-0M-mTe" id="Sz3-Vf-752"/>
+                <outlet property="_price" destination="ZBa-k0-4PC" id="4cd-Hc-WxE"/>
+                <outlet property="_tourTitle" destination="gGI-af-7RU" id="vrC-B9-5HI"/>
+            </connections>
+            <point key="canvasLocation" x="6.5" y="72"/>
         </tableViewCell>
     </objects>
 </document>

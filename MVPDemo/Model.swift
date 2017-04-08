@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct Tours {
+    let title: String
+    let deptCountry: String
+    let destCountry: String
+    let price: Int
+    let imageURL: String
+    
+}

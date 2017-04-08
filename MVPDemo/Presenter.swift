@@ -7,3 +7,66 @@
 //
 
 import Foundation
+import SwiftyJSON
+import Alamofire
+
+protocol TourPresenter: class {
+    init(view: ToursView)
+    var numberOfTours: Int {get}
+    func tourData(index: Int) -> Tours
+    func showTours()
+}
+
+struct URLParam {
+    static let apiKey = "XXXXXXXXXXXXXXXX"
+    static let format = "json"
+    static let area = "EUR"
+    static let dep = "TYO"
+    static let count = 10
+        
+}
+
+final class TourPresenterImpl: TourPresenter {
+    
+    private let view: ToursView
+    private var tours: [Tours] = []
+    
+    required init(view: ToursView) {
+        self.view = view
+    }
+    
+    var numberOfTours: Int {
+        return tours.count
+    }
+    
+    func tourData(index: Int) -> Tours {
+        return tours[index]
+    }
+    
+    func showTours() {
+        let parameters: Parameters = ["key" : URLParam.apiKey,
+                          "format" : URLParam.format,
+                          "area" : URLParam.area,
+                          "dept" : URLParam.dep,
+                          "count" : URLParam.count]
+        
+        Alamofire.request("http://webservice.recruit.co.jp/ab-road/tour/v1/?", parameters: parameters).responseJSON { (response) in
+            guard let jsonData = response.result.value else {
+                return
+            }
+            let json = JSON(jsonData)
+            
+            json["results"]["tour"].forEach({ (head, data) in
+                let tour = Tours(title: data["title"].string!,
+                      deptCountry: data["dept_city"]["name"].string!,
+                      destCountry: data["dest"]["name"].string!,
+                      price: data["price"]["all_month"]["max"].int!,
+                      imageURL: data["img"][0]["s"].string!)
+                
+                self.tours.append(tour)
+            })
+            
+            self.view.reloadData()
+        }
+    }
+}

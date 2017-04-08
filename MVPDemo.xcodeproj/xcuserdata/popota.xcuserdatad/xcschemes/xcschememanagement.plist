@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MVPDemoTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>C477F3FC1E9886BC00495872</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4F133201E9888B200F98E95</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4F1332E1E9888C300F98E95</key>
 		<dict>
 			<key>primary</key>
 			<true/>

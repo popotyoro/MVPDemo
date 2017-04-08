@@ -9,6 +9,12 @@
 import UIKit
 
 class ToursTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var _imageView: UIImageView!
+    @IBOutlet weak var _depLabel: UILabel!
+    @IBOutlet weak var _desLabel: UILabel!
+    @IBOutlet weak var _tourTitle: UILabel!
+    @IBOutlet weak var _price: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +25,20 @@ class ToursTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setData(withTourData tourData: Tours) {
+        let url = URL(string: tourData.imageURL)!
+        let data = try? Data(contentsOf: url)
+        guard let image = UIImage(data: data!) else {
+            return
+        }
+        _imageView.image = image
+//        _imageView.contentMode = .scaleAspectFit
+        _depLabel.text = tourData.deptCountry
+        _desLabel.text = tourData.destCountry
+        _tourTitle.text = tourData.title
+        _price.text = tourData.price.description + "円"
     }
     
 }
